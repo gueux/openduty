@@ -62,6 +62,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -104,6 +106,7 @@ PAGINATION_DEFAULT_PAGINATION = 20 # The default amount of items to show on a pa
 STATIC_URL = '/static/'
 
 STATIC_ROOT =  os.path.realpath(os.path.dirname(__file__))+"/static/"
+
 STATICFILES_DIRS = (
     os.path.realpath(os.path.dirname(__file__))+'/static_schedule/',
 )
